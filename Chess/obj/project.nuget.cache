@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qddaXXcbz9DNHBjbxBx7kTjI9hfSQEm3KAPRQfJ/f4pYo3DkqA8CTWiHYhteQLCgo75LezE8jMAKwrMzT1r1vA==",
+  "dgSpecHash": "fwt+0g00hSrhzgIQeoh64r9VIZsG5oULuJCSFl4wGupOtede4AGqVg3XSesBNrTehN8kbQRHXgS2RFDa+7WCnQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\dfowl\\Vscode apps\\Chess\\Chess\\Chess.csproj",
+  "projectFilePath": "C:\\Users\\dfowl\\Vscode apps\\Chess\\Chess\\Chess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.0\\microsoft.aspnetcore.authorization.7.0.0.nupkg.sha512",
     "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.0\\microsoft.aspnetcore.components.7.0.0.nupkg.sha512",

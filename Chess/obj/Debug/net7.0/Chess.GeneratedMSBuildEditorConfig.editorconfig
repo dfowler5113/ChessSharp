@@ -20,16 +20,8 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/dfowl/Vscode apps/Chess/Chess/Pages/chessboard.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcY2hlc3Nib2FyZC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/dfowl/Vscode apps/Chess/Chess/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ291bnRlci5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/dfowl/Vscode apps/Chess/Chess/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
+[c:/Users/dfowl/Vscode apps/Chess/Chess/Pages/Chessboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlc3Nib2FyZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/dfowl/Vscode apps/Chess/Chess/Pages/Index.razor]

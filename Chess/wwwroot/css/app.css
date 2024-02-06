@@ -99,3 +99,31 @@ a, .btn-link {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+
+
+    .chessboard {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr); /* 10 columns */
+        width: 80vh; /* Adjust based on your preference */
+        height: 64vh; /* Adjust to maintain aspect ratio */
+        margin: auto;
+    }
+    
+    .chessboard-row {
+        display: contents;
+    }
+    
+    .chessboard-cell {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    
+    .light-cell {
+        background-color: #f0d9b5; /* Light wood color */
+    }
+    
+    .dark-cell {
+        background-color: #b58863; /* Dark wood color */
+    }
+    

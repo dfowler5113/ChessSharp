@@ -1,0 +1,21 @@
+@page "/chessboard"
+
+<div class="chessboard">
+    @for (int row = 0; row < 8; row++)
+    {
+        <div class="chessboard-row">
+            @for (int col = 0; col < 10; col++)
+            {
+                <div class="chessboard-cell @GetCellColor(row, col)"></div>
+            }
+        </div>
+    }
+</div>
+
+@functions {
+    private string GetCellColor(int row, int col)
+    {
+        // Alternate cell color based on row and column
+        return (row + col) % 2 == 0 ? "light-cell" : "dark-cell";
+    }
+}
