@@ -1,6 +1,4 @@
-
 @page "/chessboard"
-
 <div class="chessboard">
     @for (int row = 0; row < 8; row++)
     {
@@ -15,66 +13,79 @@
         </div>
     }
 </div>
-
 @code { 
-  
     private string[,] chessPieces = new string[8, 8];
     private bool isPieceSelected = false;
     private (int row, int col) selectedPiece = (-1, -1); // Updated to track selected piece
+
+    // Example FEN for starting position
+    private string fenString = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+
     protected override void OnInitialized()
     {
-        
-        // Clear the board
+        InitializeBoardFromFEN(fenString);
+    }
+
+    private void InitializeBoardFromFEN(string fen)
+    {
+        // Reset the board
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
-               chessPieces[i, j] = null;
+                chessPieces[i, j] = null;
             }
         }
-    
-       
-       
 
-// Place the white pieces
-chessPieces[0, 0] = "white-rook";
-chessPieces[0, 1] = "white-knight";
-chessPieces[0, 2] = "white-bishop";
-chessPieces[0, 3] = "white-queen"; 
-chessPieces[0, 4] = "white-king";
-chessPieces[0, 5] = "white-bishop";
-chessPieces[0, 6] = "white-knight";
-chessPieces[0, 7] = "white-rook";
-chessPieces[1, 0] = "white-pawn"; 
-chessPieces[1, 1] = "white-pawn"; 
-chessPieces[1, 2] = "white-pawn"; 
-chessPieces[1, 3] = "white-pawn"; 
-chessPieces[1, 4] = "white-pawn"; 
-chessPieces[1, 5] = "white-pawn"; 
-chessPieces[1, 6] = "white-pawn"; 
-chessPieces[1, 7] = "white-pawn"; 
-
-
-// Place the black pieces
-chessPieces[7, 0] = "black-rook";
-chessPieces[7, 1] = "black-knight";
-chessPieces[7, 2] = "black-bishop";
-chessPieces[7, 3] = "black-queen"; 
-chessPieces[7, 4] = "black-king";
-chessPieces[7, 5] = "black-bishop";
-chessPieces[7, 6] = "black-knight";
-chessPieces[7, 7] = "black-rook";
-chessPieces[6, 0] = "black-pawn";
-chessPieces[6, 1] = "black-pawn";
-chessPieces[6, 2] = "black-pawn"; 
-chessPieces[6, 3] = "black-pawn";
-chessPieces[6, 4] = "black-pawn";
-chessPieces[6, 5] = "black-pawn"; 
-chessPieces[6, 6] = "black-pawn"; 
-chessPieces[6, 7] = "black-pawn"; 
-
-
+        // Parse the FEN string
+        var ranks = fen.Split(' ')[0].Split('/');
+        for (int rank = 0; rank < ranks.Length; rank++)
+        {
+            var file = 0;
+            foreach (var symbol in ranks[rank])
+            {
+                if (char.IsDigit(symbol))
+                {
+                    file += int.Parse(symbol.ToString());
+                }
+                else
+                {
+                    var piece = PieceFromFEN(symbol);
+                    if (piece != null)
+                    {
+                        chessPieces[7 - rank, file] = piece;
+                        file++;
+                    }
+                }
+            }
+        }
     }
+
+    private string PieceFromFEN(char fenChar)
+    {
+        switch (fenChar)
+        {
+            case 'p': return "black-pawn";
+            case 'r': return "black-rook";
+            case 'n': return "black-knight";
+            case 'b': return "black-bishop";
+            case 'q': return "black-queen";
+            case 'k': return "black-king";
+            case 'P': return "white-pawn";
+            case 'R': return "white-rook";
+            case 'N': return "white-knight";
+            case 'B': return "white-bishop";
+            case 'Q': return "white-queen";
+            case 'K': return "white-king";
+            default: return null; // Invalid piece
+        }
+    
+       }
+       
+
+
+
+
 private void HandleClick(int row, int col)
 {
     Console.WriteLine("Clicked");
