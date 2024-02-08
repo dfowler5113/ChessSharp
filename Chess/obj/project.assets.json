@@ -1801,19 +1801,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dfowl\\.nuget\\packages\\": {}
+    "/Users/jamarw/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\dfowl\\Vscode apps\\Chess\\Chess\\Chess.csproj",
+      "projectUniqueName": "/Users/jamarw/Documents/GitHub/ChessSharp/Chess/Chess.csproj",
       "projectName": "Chess",
-      "projectPath": "c:\\Users\\dfowl\\Vscode apps\\Chess\\Chess\\Chess.csproj",
-      "packagesPath": "C:\\Users\\dfowl\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\dfowl\\Vscode apps\\Chess\\Chess\\obj\\",
+      "projectPath": "/Users/jamarw/Documents/GitHub/ChessSharp/Chess/Chess.csproj",
+      "packagesPath": "/Users/jamarw/.nuget/packages/",
+      "outputPath": "/Users/jamarw/Documents/GitHub/ChessSharp/Chess/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dfowl\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/jamarw/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -1869,7 +1869,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/opt/homebrew/Cellar/dotnet/7.0.100/libexec/sdk/7.0.100/RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
