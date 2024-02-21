@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+dzdXknwzRrj2KjFaXeJCaEVo2cVMBuSCl/nMdTeyNYAxivH3gWwDmTNZNNO+ImBOcfZ8c+honqVuS5PFjS71A==",
+  "dgSpecHash": "ulDTqLXsiWU/dznlXvRZE2JgmSZIzWTupml8T36aFI0HUDqWxbaXO4wq6SaTgS8UdZ2dp6lC7TAvKFXy1bm8MA==",
   "success": true,
   "projectFilePath": "/Users/jamarw/Documents/GitHub/ChessSharp/Chess/Chess.csproj",
   "expectedPackageFiles": [
@@ -28,10 +28,13 @@
     "/Users/jamarw/.nuget/packages/microsoft.extensions.primitives/7.0.0/microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "/Users/jamarw/.nuget/packages/microsoft.jsinterop/7.0.0/microsoft.jsinterop.7.0.0.nupkg.sha512",
     "/Users/jamarw/.nuget/packages/microsoft.jsinterop.webassembly/7.0.0/microsoft.jsinterop.webassembly.7.0.0.nupkg.sha512",
+    "/Users/jamarw/.nuget/packages/microsoft.net.illink.analyzers/7.0.100-1.23211.1/microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
+    "/Users/jamarw/.nuget/packages/microsoft.net.illink.tasks/7.0.100-1.23211.1/microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
+    "/Users/jamarw/.nuget/packages/microsoft.net.sdk.webassembly.pack/8.0.2/microsoft.net.sdk.webassembly.pack.8.0.2.nupkg.sha512",
     "/Users/jamarw/.nuget/packages/system.io.pipelines/7.0.0/system.io.pipelines.7.0.0.nupkg.sha512",
     "/Users/jamarw/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/Users/jamarw/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512",
-    "/Users/jamarw/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/7.0.0/microsoft.netcore.app.runtime.mono.browser-wasm.7.0.0.nupkg.sha512"
+    "/Users/jamarw/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/7.0.16/microsoft.netcore.app.runtime.mono.browser-wasm.7.0.16.nupkg.sha512"
   ],
   "logs": []
 }
