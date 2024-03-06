@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dfowl\\Vscode apps\\Chess\\Chess\\Chess.csproj": {}
+    "/Users/jwhitf/Documents/GitHub/ChessSharp/Chess/Chess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dfowl\\Vscode apps\\Chess\\Chess\\Chess.csproj": {
+    "/Users/jwhitf/Documents/GitHub/ChessSharp/Chess/Chess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dfowl\\Vscode apps\\Chess\\Chess\\Chess.csproj",
+        "projectUniqueName": "/Users/jwhitf/Documents/GitHub/ChessSharp/Chess/Chess.csproj",
         "projectName": "Chess",
-        "projectPath": "C:\\Users\\dfowl\\Vscode apps\\Chess\\Chess\\Chess.csproj",
-        "packagesPath": "C:\\Users\\dfowl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dfowl\\Vscode apps\\Chess\\Chess\\obj\\",
+        "projectPath": "/Users/jwhitf/Documents/GitHub/ChessSharp/Chess/Chess.csproj",
+        "packagesPath": "/Users/jwhitf/.nuget/packages/",
+        "outputPath": "/Users/jwhitf/Documents/GitHub/ChessSharp/Chess/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dfowl\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/jwhitf/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -46,6 +51,24 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Microsoft.NET.ILLink.Analyzers": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.100-1.23211.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.NET.Sdk.WebAssembly.Pack": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.2, )",
+              "autoReferenced": true
             }
           },
           "imports": [
@@ -61,8 +84,16 @@
           "warn": true,
           "downloadDependencies": [
             {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.16, 7.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.16, 7.0.16]"
+            },
+            {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[7.0.0, 7.0.0]"
+              "version": "[7.0.16, 7.0.16]"
             }
           ],
           "frameworkReferences": {
@@ -70,7 +101,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
