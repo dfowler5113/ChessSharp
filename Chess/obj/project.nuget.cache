@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fwt+0g00hSrhzgIQeoh64r9VIZsG5oULuJCSFl4wGupOtede4AGqVg3XSesBNrTehN8kbQRHXgS2RFDa+7WCnQ==",
+  "dgSpecHash": "4F8he6+/P4fFqjcTi/vMsgL5bGVD8J1oggwr3x+XokYOX6cVniNequxUgZv3VtiPU9uK6TJbEoXeVxV45B9+xA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dfowl\\Vscode apps\\Chess\\Chess\\Chess.csproj",
+  "projectFilePath": "C:\\Users\\dfowl\\Vscode apps\\Chess\\chess\\Chess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.0\\microsoft.aspnetcore.authorization.7.0.0.nupkg.sha512",
     "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.0\\microsoft.aspnetcore.components.7.0.0.nupkg.sha512",
@@ -28,10 +28,16 @@
     "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0\\microsoft.extensions.primitives.7.0.0.nupkg.sha512",
     "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.jsinterop\\7.0.0\\microsoft.jsinterop.7.0.0.nupkg.sha512",
     "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.jsinterop.webassembly\\7.0.0\\microsoft.jsinterop.webassembly.7.0.0.nupkg.sha512",
+    "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.net.illink.analyzers\\7.0.100-1.23211.1\\microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
+    "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23211.1\\microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
+    "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.2\\microsoft.net.sdk.webassembly.pack.8.0.2.nupkg.sha512",
     "C:\\Users\\dfowl\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\dfowl\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\dfowl\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
-    "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.0\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.0.nupkg.sha512"
+    "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.16\\microsoft.netcore.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.16\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.16.nupkg.sha512",
+    "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.16\\microsoft.windowsdesktop.app.ref.7.0.16.nupkg.sha512",
+    "C:\\Users\\dfowl\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.16\\microsoft.aspnetcore.app.ref.7.0.16.nupkg.sha512"
   ],
   "logs": []
 }

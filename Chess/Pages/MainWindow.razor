@@ -1,0 +1,37 @@
+﻿@page "/Chessboard2"
+@using Chesslogic
+
+<div class="chess-board" style="background-image: url('/Assets/Board.png');">
+    @for (int row = 0; row < 8; row++)
+    {
+        <div class="chess-row">
+            @for (int col = 0; col < 8; col++)
+            {
+               <img class="chess-piece" src="@GetPieceImage(row, col)" >
+
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private Game gameState;
+    private Board board;
+
+    protected override void OnInitialized()
+    {
+        gameState = new Game(Player.White, Board.Initialize());
+        board = gameState.Board; // Assuming Game has a Board property
+    }
+
+    private string GetPieceImage(int row, int col)
+{
+    var piece = board[row, col];
+    var imagePath = piece != null ? Images.GetImage(piece) : null;
+    
+    // Log the information for debugging (for server-side Blazor, console output is on the server)
+    Console.WriteLine($"Row: {row}, Col: {col}, Piece: {piece?.GetType().Name}, Image Path: {imagePath}");
+    
+    return imagePath;
+}
+}

@@ -1,4 +1,8 @@
 is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
 build_property.TargetFramework = net7.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = 
@@ -9,37 +13,47 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = browser
 build_property.RootNamespace = Chess
 build_property.RootNamespace = Chess
-build_property.ProjectDir = C:\Users\dfowl\Vscode apps\Chess\Chess\
+build_property.ProjectDir = C:\Users\dfowl\Vscode apps\Chess\chess\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\dfowl\Vscode apps\Chess\Chess
+build_property.MSBuildProjectDirectory = C:\Users\dfowl\Vscode apps\Chess\chess
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/dfowl/Vscode apps/Chess/Chess/App.razor]
+[C:/Users/dfowl/Vscode apps/Chess/chess/App.razor]
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dfowl/Vscode apps/Chess/Chess/Pages/Chessboard.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2hlc3Nib2FyZC5yYXpvcg==
+[C:/Users/dfowl/Vscode apps/Chess/chess/Old/css/Chessboard.razor]
+build_metadata.AdditionalFiles.TargetPath = T2xkXGNzc1xDaGVzc2JvYXJkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dfowl/Vscode apps/Chess/Chess/Pages/Index.razor]
+[C:/Users/dfowl/Vscode apps/Chess/chess/Old/css/Chessboard2.razor]
+build_metadata.AdditionalFiles.TargetPath = T2xkXGNzc1xDaGVzc2JvYXJkMi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dfowl/Vscode apps/Chess/chess/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dfowl/Vscode apps/Chess/Chess/Shared/SurveyPrompt.razor]
+[C:/Users/dfowl/Vscode apps/Chess/chess/Pages/MainWindow.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbldpbmRvdy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dfowl/Vscode apps/Chess/chess/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dfowl/Vscode apps/Chess/Chess/_Imports.razor]
+[C:/Users/dfowl/Vscode apps/Chess/chess/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dfowl/Vscode apps/Chess/Chess/Shared/MainLayout.razor]
+[C:/Users/dfowl/Vscode apps/Chess/chess/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-mvdeq5vpnh
 
-[C:/Users/dfowl/Vscode apps/Chess/Chess/Shared/NavMenu.razor]
+[C:/Users/dfowl/Vscode apps/Chess/chess/Shared/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-6uloa14vmc
