@@ -11,4 +11,5 @@ namespace Chesslogic
         public abstract void Execute(Board board); // Command Pattern
 
     }
+    
 }
