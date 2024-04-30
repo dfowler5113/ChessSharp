@@ -12,7 +12,9 @@
     position: relative;
     padding-top: 50%; 
 }
-
+.darkened-square {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
 .chess-row {
     width: 100%;
     position: absolute; 
@@ -114,9 +116,14 @@ private void HandleClick(Position pos)
 }
 
     private string GetSquareClass(int row, int col)
+{
+    if (isPositionSelected && selectedPosition.Row == row && selectedPosition.Column == col)
     {
-        return selectedPosition != null && selectedPosition.Row == row && selectedPosition.Column == col ? "highlighted" : "";
+        return "highlighted darkened-square"; 
     }
+    return "";
+}
+
 
 
 

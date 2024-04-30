@@ -36,32 +36,46 @@ namespace Chesslogic
         }
 
         private IEnumerable<Moves> ForwardMoves(Position from, Board board)
+{
+    
+    Position oneStepForward = from + forward;
+    if (canMove(oneStepForward, board))
+    {
+        yield return new normalMove(from, oneStepForward);
+    }
+
+    
+    if (!HasMoved)
+    {
+        Position twoStepsForward = oneStepForward + forward;
+        if (canMove(oneStepForward, board) && canMove(twoStepsForward, board)) 
         {
-            Position ahead = from + forward;
-            if (HasMoved == true)
-            {
-                if (canMove(ahead, board))
-                {
-                    yield return new normalMove(from, ahead);
-                }
-            }
-            else if (canMove(ahead + forward, board))
-            {
-                yield return new normalMove(from, ahead + forward);
-            }
+            yield return new normalMove(from, twoStepsForward);
         }
+    }
+}
         private IEnumerable<Moves> Captures(Position from, Board board)
+{
+    PositionDirection[] captureDirections;
+    if (Color == Player.White)
+    {
+        captureDirections = new[] { PositionDirection.UpLeft, PositionDirection.UpRight };
+    }
+    else
+    {
+        captureDirections = new[] { PositionDirection.DownLeft, PositionDirection.DownRight };
+    }
+
+    foreach (PositionDirection dir in captureDirections)
+    {
+        Position targetPos = from + dir;
+        if (CanCapture(targetPos, board))
         {
-            foreach(PositionDirection dir in new PositionDirection[] 
-            {PositionDirection.UpLeft, PositionDirection.UpRight})
-            {
-                Position pos = from + dir;
-                if(CanCapture(pos, board))
-                {
-                    yield return new normalMove(from, pos);
-                }
-            }
+            yield return new normalMove(from, targetPos);
         }
+    }
+}
+
 
         public override IEnumerable<Moves> GetMoves(Position from, Board board)
         {
