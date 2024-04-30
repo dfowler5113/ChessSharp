@@ -35,43 +35,69 @@ namespace Chesslogic
             return board[pos].Color != Color;
         }
 
-        private IEnumerable<Moves> ForwardMoves(Position from, Board board)
+ private IEnumerable<Moves> ForwardMoves(Position from, Board board)
 {
-    
+    int promotionRow = (Color == Player.White) ? 7 : 0; 
     Position oneStepForward = from + forward;
-    if (canMove(oneStepForward, board))
+    
+    
+    if (oneStepForward.Row == promotionRow && canMove(oneStepForward, board))
+    {
+        yield return new PromotionMove(from, oneStepForward, this.Color);  
+    }
+    else if (canMove(oneStepForward, board))
     {
         yield return new normalMove(from, oneStepForward);
     }
 
-    
+  
     if (!HasMoved)
     {
         Position twoStepsForward = oneStepForward + forward;
-        if (canMove(oneStepForward, board) && canMove(twoStepsForward, board)) 
+        if (canMove(oneStepForward, board) && canMove(twoStepsForward, board))
         {
             yield return new normalMove(from, twoStepsForward);
         }
     }
 }
-        private IEnumerable<Moves> Captures(Position from, Board board)
+public class PromotionMove : Moves
 {
-    PositionDirection[] captureDirections;
-    if (Color == Player.White)
+    public override MovementType Type => MovementType.Promotion;
+    public override Position FromPosition { get; }
+    public override Position ToPosition { get; }
+    public Player Color { get; }
+
+    public PromotionMove(Position from, Position to, Player color)
     {
-        captureDirections = new[] { PositionDirection.UpLeft, PositionDirection.UpRight };
-    }
-    else
-    {
-        captureDirections = new[] { PositionDirection.DownLeft, PositionDirection.DownRight };
+        FromPosition = from;
+        ToPosition = to;
+        Color = color;
     }
 
-    foreach (PositionDirection dir in captureDirections)
+    public override void Execute(Board board)
+    {
+       
+        board[ToPosition] = new Queen(Color);
+        board[FromPosition] = null;
+    }
+}
+
+private IEnumerable<Moves> Captures(Position from, Board board)
+{
+    int promotionRow = (Color == Player.White) ? 7 : 0;
+    foreach (PositionDirection dir in (Color == Player.White) ? new[] {PositionDirection.UpLeft, PositionDirection.UpRight} : new[] {PositionDirection.DownLeft, PositionDirection.DownRight})
     {
         Position targetPos = from + dir;
         if (CanCapture(targetPos, board))
         {
-            yield return new normalMove(from, targetPos);
+            if (targetPos.Row == promotionRow)
+            {
+                yield return new PromotionMove(from, targetPos, this.Color);
+            }
+            else
+            {
+                yield return new normalMove(from, targetPos);
+            }
         }
     }
 }

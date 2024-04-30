@@ -19,10 +19,12 @@
     width: 100%;
     position: absolute; 
 }
-
+.potential-move {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
 .chess-square {
     width: 12.5%; 
-    height: 99%; 
+    height: 100%; 
     float: left; 
     position: relative; 
 }
@@ -65,7 +67,8 @@
 @code {
      private Game gameState;
     private Board board;
-   
+   private List<Position> potentialMoves = new List<Position>();
+
 
     
     protected override void OnInitialized()
@@ -84,7 +87,8 @@ private void HandleClick(Position pos)
         if (!board.isEmpty(pos) && board[pos].Color == gameState.Current)
         {
             selectedPosition = pos;
-            isPositionSelected = true; 
+            isPositionSelected = true;
+            potentialMoves = gameState.LegalMoves(selectedPosition).Select(m => m.ToPosition).ToList(); 
             Console.WriteLine($"Piece selected at {pos.Row}, {pos.Column}");
         }
     }
@@ -92,18 +96,19 @@ private void HandleClick(Position pos)
     {
         if (selectedPosition.Equals(pos))
         {
-            isPositionSelected = false; 
+            isPositionSelected = false;
+            potentialMoves.Clear();
             Console.WriteLine("Deselecting piece.");
         }
         else
         {
-            var moves = gameState.LegalMoves(selectedPosition).ToList();
-            var move = moves.FirstOrDefault(m => m.ToPosition.Equals(pos));
+            var move = potentialMoves.FirstOrDefault(m => m.Equals(pos));
             if (move != null)
             {
                 Console.WriteLine($"Executing move to {pos.Row}, {pos.Column}");
-                gameState.MakeMove(move);
-                isPositionSelected = false;  
+                gameState.MakeMove(new normalMove(selectedPosition, pos)); 
+                isPositionSelected = false;
+                potentialMoves.Clear();
             }
             else
             {
@@ -115,11 +120,17 @@ private void HandleClick(Position pos)
     StateHasChanged();  
 }
 
-    private string GetSquareClass(int row, int col)
+
+private string GetSquareClass(int row, int col)
 {
+    Position currentPos = new Position(row, col);
     if (isPositionSelected && selectedPosition.Row == row && selectedPosition.Column == col)
     {
-        return "highlighted darkened-square"; 
+        return "highlighted darkened-square";
+    }
+    else if (isPositionSelected && potentialMoves.Any(p => p.Equals(currentPos)))
+    {
+        return "potential-move";
     }
     return "";
 }
