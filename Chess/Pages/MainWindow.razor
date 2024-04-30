@@ -1,37 +1,137 @@
 ﻿@page "/Chessboard2"
 @using Chesslogic
+<style>
+.chess-board {
+    background-image: url('Assets/Board.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50%; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block; 
+    position: relative;
+    padding-top: 50%; 
+}
 
-<div class="chess-board" style="background-image: url('/Assets/Board.png');">
+.chess-row {
+    width: 100%;
+    position: absolute; 
+}
+
+.chess-square {
+    width: 12.5%; 
+    height: 99%; 
+    float: left; 
+    position: relative; 
+}
+
+.chess-piece {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+.highlighted-square {
+    outline: 2px solid yellow; 
+    outline-offset: -2px;
+}
+
+</style>
+<div class="chess-board" style="background-image: url('Assets/Board.png');">
     @for (int row = 0; row < 8; row++)
-    {
-        <div class="chess-row">
-            @for (int col = 0; col < 8; col++)
-            {
-               <img class="chess-piece" src="@GetPieceImage(row, col)" >
-
-            }
-        </div>
-    }
+{
+    int localRow = row; 
+    <div class="chess-row" style="top: @(localRow * 12.5)%; height: 12.5%;">
+        @for (int col = 0; col < 8; col++)
+        {
+            int localCol = col; 
+            <div class="chess-square @(GetSquareClass(localRow, localCol))"
+                 @onclick="() => HandleClick(new Position(localRow, localCol))">
+                 @if (board[localRow, localCol] != null)
+                 {
+                     <img class="chess-piece" src="@GetPieceImage(localRow, localCol)" alt="Chess Piece">
+                 }
+            </div>
+        }
+    </div>
+}
 </div>
 
-@code {
-    private Game gameState;
-    private Board board;
 
+
+
+@code {
+     private Game gameState;
+    private Board board;
+    
+
+    
     protected override void OnInitialized()
     {
         gameState = new Game(Player.White, Board.Initialize());
-        board = gameState.Board; // Assuming Game has a Board property
+        board = gameState.Board; 
     }
+private Position selectedPosition;
+
+private void HandleClick(Position pos)
+{
+    if (selectedPosition == null)
+    {
+       
+        if (!board.isEmpty(pos) && board[pos].Color == gameState.Current)
+        {
+            selectedPosition = pos;
+        }
+    }
+    else
+    {
+        
+        if (selectedPosition.Equals(pos))
+        {
+            
+            selectedPosition = null;
+        }
+        else
+        {
+          
+            var moves = gameState.LegalMoves(selectedPosition); 
+            var move = moves.FirstOrDefault(m => m.ToPosition.Equals(pos));
+            if (move != null)
+            {
+                gameState.MakeMove(move);
+                selectedPosition = null; 
+            }
+            else
+            {
+              
+                selectedPosition = null;
+            }
+        }
+    }
+    StateHasChanged(); 
+}
+
+
+    private string GetSquareClass(int row, int col)
+    {
+        return selectedPosition != null && selectedPosition.Row == row && selectedPosition.Column == col ? "highlighted" : "";
+    }
+
+
+
 
     private string GetPieceImage(int row, int col)
 {
     var piece = board[row, col];
-    var imagePath = piece != null ? Images.GetImage(piece) : null;
+    if (piece == null)
+    {
+        return string.Empty; 
+    }
+
     
-    // Log the information for debugging (for server-side Blazor, console output is on the server)
-    Console.WriteLine($"Row: {row}, Col: {col}, Piece: {piece?.GetType().Name}, Image Path: {imagePath}");
-    
+    var imagePath = Images.GetImage(piece); 
     return imagePath;
 }
 }
+
+

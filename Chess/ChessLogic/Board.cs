@@ -5,13 +5,22 @@ namespace Chesslogic
     public class Board
     {
         private readonly Piece[,] pieces = new Piece[8, 8];
-        // Code cannot access the pieces array directly
-        // So we'll make two indexers one with position one with col,row
+       
         public Piece this[int row, int col]
-        {
-            get { return pieces[row, col]; }
-            set { pieces[row, col] = value; }
-        }
+{
+    get
+    {
+        if (row < 0 || row >= 8 || col < 0 || col >= 8)
+            throw new IndexOutOfRangeException("Row or column is out of the board's bounds.");
+        return pieces[row, col];
+    }
+    set
+    {
+        if (row < 0 || row >= 8 || col < 0 || col >= 8)
+            throw new IndexOutOfRangeException("Row or column is out of the board's bounds.");
+        pieces[row, col] = value;
+    }
+}
         public Piece this[Position pos]
         {
             get { return this[pos.Row, pos.Column]; }
@@ -30,7 +39,7 @@ namespace Chesslogic
                 this[1, i] = new Pawn(Player.Black);
                 this[6, i] = new Pawn(Player.White);
             }
-            //Generate black back rank peices
+            
             this[0, 0] = new Rook(Player.Black);
             this[0, 1] = new Knight(Player.Black);
             this[0, 2] = new Bishop(Player.Black);

@@ -106,25 +106,20 @@ a, .btn-link {
 
 
 
-img {
-    width: 10%; /* Scale images to fit their cell */
-    height: auto; /* Keep aspect ratio intact */
-}
 
-.chess-board {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    
-    background-size: contain; /* or 'cover' depending on the desired effect */
-    background-repeat: no-repeat;
-    width: 100%; /* Adjust to your preference */
-    max-width: 100px; /* Maximum size */
-    height: auto; /* Maintain aspect ratio */
-    aspect-ratio: 1; /* Ensure the board is square */
-    position: relative;
-}
 
+    .chess-board {
+        
+        width: 10%; 
+        background-image: url('Assets/Board.png');
+        background-size: cover !important;
+        background-position: center;
+      
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        gap: 0;
+      }
+      
 
 .chess-board img {
     width: 10%;
@@ -132,7 +127,5 @@ img {
 }
 
 .chess-piece {
-    width: 10%; /* Make the image responsive to the size of the cell */
-    /* Maintain aspect ratio */
-     /* Ensure the content is scaled to fit within the cell */
+    width: 20%; 
 }
