@@ -63,7 +63,7 @@
 @code {
      private Game gameState;
     private Board board;
-    
+   
 
     
     protected override void OnInitialized()
@@ -71,46 +71,47 @@
         gameState = new Game(Player.White, Board.Initialize());
         board = gameState.Board; 
     }
-private Position selectedPosition;
 
+
+private Position selectedPosition;
+private bool isPositionSelected = false; 
 private void HandleClick(Position pos)
 {
-    if (selectedPosition == null)
+    if (!isPositionSelected)
     {
-       
         if (!board.isEmpty(pos) && board[pos].Color == gameState.Current)
         {
             selectedPosition = pos;
+            isPositionSelected = true; 
+            Console.WriteLine($"Piece selected at {pos.Row}, {pos.Column}");
         }
     }
     else
     {
-        
         if (selectedPosition.Equals(pos))
         {
-            
-            selectedPosition = null;
+            isPositionSelected = false; 
+            Console.WriteLine("Deselecting piece.");
         }
         else
         {
-          
-            var moves = gameState.LegalMoves(selectedPosition); 
+            var moves = gameState.LegalMoves(selectedPosition).ToList();
             var move = moves.FirstOrDefault(m => m.ToPosition.Equals(pos));
             if (move != null)
             {
+                Console.WriteLine($"Executing move to {pos.Row}, {pos.Column}");
                 gameState.MakeMove(move);
-                selectedPosition = null; 
+                isPositionSelected = false;  
             }
             else
             {
-              
-                selectedPosition = null;
+                Console.WriteLine("Move invalid or not found.");
+                
             }
         }
     }
-    StateHasChanged(); 
+    StateHasChanged();  
 }
-
 
     private string GetSquareClass(int row, int col)
     {

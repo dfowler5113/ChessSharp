@@ -1,11 +1,7 @@
-﻿
-
-namespace Chesslogic
+﻿namespace Chesslogic
 {
-    public class Position
+    public struct Position
     {
-        //Represents positon on the board, Requires Row and Color
-
         public int Row { get; }
         public int Column { get; }
 
@@ -14,27 +10,25 @@ namespace Chesslogic
             Row = row;
             Column = column;
         }
-public static Position operator +(Position position, PositionDirection direction)
-    {
-        // Assuming PositionDirection translates to a change in coordinates
-        return new Position(position.Row + direction.RowChange, position.Column + direction.ColumnChange);
-    }
-        public Player SquareColor()
+
+        public static Position operator +(Position position, PositionDirection direction)
         {
-            if ((Row + Column) % 2 == 0)
-            {
-                return Player.White;
-            }
-            return Player.Black;
-        }
-        public override bool Equals(object obj)
-        {
-            return obj is Position position &&
-                   Row == position.Row &&
-                   Column == position.Column;
+            return new Position(position.Row + direction.RowChange, position.Column + direction.ColumnChange);
         }
 
-        
+        public Player SquareColor()
+        {
+            return (Row + Column) % 2 == 0 ? Player.White : Player.Black;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Position position)
+            {
+                return Row == position.Row && Column == position.Column;
+            }
+            return false;
+        }
 
         public override int GetHashCode()
         {
@@ -43,12 +37,12 @@ public static Position operator +(Position position, PositionDirection direction
 
         public static bool operator ==(Position left, Position right)
         {
-            return EqualityComparer<Position>.Default.Equals(left, right);
+            return left.Equals(right);
         }
 
         public static bool operator !=(Position left, Position right)
         {
-            return !(left == right);
+            return !left.Equals(right);
         }
     }
 }

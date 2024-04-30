@@ -38,10 +38,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/dfowl/Vscode apps/Chess/chess/Pages/MainWindow.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbldpbmRvdy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/dfowl/Vscode apps/Chess/chess/Shared/SurveyPrompt.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -49,6 +45,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/dfowl/Vscode apps/Chess/chess/_Imports.razor]
 build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/dfowl/Vscode apps/Chess/chess/Pages/MainWindow.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpbldpbmRvdy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-l4ptb9cn9y
 
 [C:/Users/dfowl/Vscode apps/Chess/chess/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
