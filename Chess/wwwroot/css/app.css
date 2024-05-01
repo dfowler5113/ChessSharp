@@ -108,24 +108,4 @@ a, .btn-link {
 
 
 
-    .chess-board {
-        
-        width: 10%; 
-        background-image: url('Assets/Board.png');
-        background-size: cover !important;
-        background-position: center;
-      
-        grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: repeat(8, 1fr);
-        gap: 0;
-      }
-      
-
-.chess-board img {
-    width: 10%;
-    
-}
-
-.chess-piece {
-    width: 20%; 
-}
+  
